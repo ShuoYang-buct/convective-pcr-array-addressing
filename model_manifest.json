@@ -1,0 +1,9 @@
+{
+  "filename": "best.pt",
+  "sha256": "2bf4d0a7310c582af7d79800b7dac6a1f520840c33c75b8270875f559819d90a",
+  "bytes": 124753569,
+  "architecture": "YOLO11x-seg",
+  "role": "candidate extraction; masks not used",
+  "distribution": "GitHub Release asset; excluded from ordinary Git commits",
+  "public_url": "https://github.com/ShuoYang-buct/convective-pcr-array-addressing/releases/download/v1.0.0/best.pt"
+}
