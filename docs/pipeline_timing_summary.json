@@ -1,0 +1,48 @@
+{
+  "reference_seconds": {
+    "median": 1.9901112499999272,
+    "min": 1.7547869999999648,
+    "max": 2.3824071999999887
+  },
+  "detection_seconds": {
+    "median": 0.4282784499999934,
+    "min": 0.2218530999999757,
+    "max": 0.6206740999998601
+  },
+  "addressing_seconds": {
+    "median": 0.6959511000000589,
+    "min": 0.3608623999999736,
+    "max": 1.6239043000000493
+  },
+  "sampling_seconds": {
+    "median": 4.992126300000052,
+    "min": 1.3399905999999646,
+    "max": 21.065223399999923
+  },
+  "total_seconds": {
+    "median": 8.28165365000001,
+    "min": 3.781372000000033,
+    "max": 25.143730400000095
+  },
+  "sampling_seconds_per_frame": {
+    "median": 0.08456034327541737,
+    "min": 0.07052582105262972,
+    "max": 0.10580102333333344
+  },
+  "protocol": {
+    "sequences": 34,
+    "frames": 2115,
+    "repetitions": 1,
+    "warmup": "Model loaded and N008 detection/addressing warmed up before each of the two sequential batches; each reported sequence timed once",
+    "included": "selected-reference TIFF reading, maximum projection, full-field enhancement, fixed crop, detection, addressing, all original TIFF reads and ROI pixel sums; stored-reference read and equality check",
+    "excluded": "model loading, figure rendering, file export, manual-coordinate evaluation",
+    "threads": 4,
+    "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+    "opencv": "4.12.0",
+    "torch": "2.9.1+cpu",
+    "cuda_available": false,
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "13th Gen Intel(R) Core(TM) i9-13950HX",
+    "batches": 2
+  }
+}
