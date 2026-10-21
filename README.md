@@ -28,7 +28,9 @@ The reference run retains 76 candidate-supported addresses and infers 24 additio
 
 ## Included data and code
 
-Only one 10 × 10 sequence is included. Its ten selected full-field frames are losslessly encoded PNGs with unchanged acquired grayscale pixels. The source acquisition contains 60 frames; the subset follows the paper's five-earlier/five-final-ten selection rule. Preprocessing runs on the full field before applying the fixed crop. The repository does not include the other 33 sequences, training data or the private engineering application. Manual center coordinates are not required or loaded by the demonstration.
+The interactive demo uses only N008 (10 × 10). Its ten selected full-field frames are losslessly encoded PNGs with unchanged acquired grayscale pixels. The source acquisition contains 60 frames; the subset follows the paper's five-earlier/five-final-ten selection rule. Preprocessing runs on the full field before applying the fixed crop. Manual center coordinates are not required or loaded by the demonstration.
+
+Additional data are available as a separate [34-sequence reference-data archive](https://github.com/ShuoYang-buct/convective-pcr-array-addressing/releases/download/v1.0.0/reference_data_34_sequences.zip). The archive contains all 34 enhanced reference images, saved detector candidates, layout dimensions and existing pointwise-confirmed manual centers (6704 addresses), with SHA-256 checksums. Downloading it is optional and does not change the default one-sequence Colab workflow. It does not contain all raw acquisition frames, training data or the private engineering application.
 
 The minimal implementation is in `src/`; the Colab notebook exposes the processing steps. Model weights are distributed through the [v1.0.0 Release](https://github.com/ShuoYang-buct/convective-pcr-array-addressing/releases/tag/v1.0.0), with their SHA-256 recorded in `model_manifest.json`. Image materials were provided by Torus (Shanghai, China).
 
