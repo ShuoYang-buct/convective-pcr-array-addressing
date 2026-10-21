@@ -34,10 +34,6 @@ Additional data are available as a separate [34-sequence reference-data archive]
 
 The minimal implementation is in `src/`; the Colab notebook exposes the processing steps. Model weights are distributed through the [v1.0.0 Release](https://github.com/ShuoYang-buct/convective-pcr-array-addressing/releases/tag/v1.0.0), with their SHA-256 recorded in `model_manifest.json`. Image materials were provided by Torus (Shanghai, China).
 
-## Manuscript revision v6.6
-
-[Revision notes and measured results](docs/revision_v6_6.md) give the five sequences whose indexing was corrected by image evidence and full-pipeline CPU timings for all 34 sequences. Per-sequence counts, timings, and the measurement protocol are included.
-
 ## Run locally
 
 ```bash
