@@ -32,18 +32,65 @@ The interactive demo uses only N008 (10 × 10). Its ten selected full-field fram
 
 Additional data are available as a separate [34-sequence reference-data archive](https://github.com/ShuoYang-buct/convective-pcr-array-addressing/releases/download/v1.0.0/reference_data_34_sequences.zip). The archive contains all 34 enhanced reference images, saved detector candidates, layout dimensions and existing pointwise-confirmed manual centers (6704 addresses), with SHA-256 checksums. Downloading it is optional and does not change the default one-sequence Colab workflow. It does not contain all raw acquisition frames, training data or the private engineering application.
 
-The minimal implementation is in `src/`; the Colab notebook exposes the processing steps. Model weights are distributed through the [v1.0.0 Release](https://github.com/ShuoYang-buct/convective-pcr-array-addressing/releases/tag/v1.0.0), with their SHA-256 recorded in `model_manifest.json`. Image materials were provided by Torus (Shanghai, China).
+The research code is in `src/`; the Colab notebook exposes the processing steps. Model weights are distributed through the [v1.0.0 Release](https://github.com/ShuoYang-buct/convective-pcr-array-addressing/releases/tag/v1.0.0), with their SHA-256 recorded in `model_manifest.json`. Image materials were provided by TorusDx (Shanghai, China).
 
 ## Run locally
 
 ```bash
 python -m pip install -r requirements.txt
-# Download best.pt from the Release into weights/.
-python demo_pipeline.py --weights weights/best.pt
+python run_demo.py
 ```
 
 Results are written to `outputs/demo/`.
 
+After installing dependencies, `python run_demo.py` is the one-command demo.
+It verifies all ten input-frame checksums and the paper-model checksum, downloads
+the approximately 125 MB model from the existing Release only if it is missing,
+then runs actual YOLO inference and lattice registration. For offline use, place
+the published model in `weights/best.pt` and run `python run_demo.py --no-download`.
+An alternate model path and output directory can be supplied with `--weights`
+and `--output`. Input metadata supplies the fixed crop and known layout size;
+manual center coordinates are not loaded by this inference.
+
+The outputs include six stage figures, three image arrays saved as PNGs,
+`addresses.csv`, `prediction.json`, `summary.json`, and `run_environment.json`.
+The last file records dependency versions and input/model verification. Its wall
+time includes process startup and figure writing and must not be compared with
+the paper's 8.28 s median pipeline timing.
+
+`environment.yml` provides a Python 3.11 Conda setup:
+`conda env create -f environment.yml`, then `conda activate convective-pcr-addressing`.
+`requirements.txt` gives compatible dependency ranges. `requirements-tested.txt`
+records direct dependencies in the existing Windows CPU runtime used for local
+verification; it is not a portable, freshly resolved lockfile. A clean Conda
+installation and hosted Colab execution have not been repeated for this update.
+
+## What this demonstration reproduces
+
+N008 exercises temporal aggregation, full-field enhancement, fixed cropping,
+new model inference, filtering and complete-grid addressing. The reference run
+produces 100 addresses, with 76 supported by candidates and 24 inferred; QC is
+`accept`. This demonstrates the processing chain for one existing sequence.
+It does not establish clinical performance or a new prospective validation.
+
+The separate 34-sequence archive supports retrospective reference-data analysis.
+It contains enhanced reference images and existing manual coordinates, rather
+than every original acquisition frame. It therefore cannot reproduce raw-frame
+processing and timing for the entire paper. The manual references are existing
+pointwise confirmations, not a newly collected independent annotation study.
+
 ## Licensing
 
-No project-wide license is specified for the author-provided code, weights or example images. Dependencies, including Ultralytics, retain their own licenses.
+Author-owned research code is available under **PolyForm Noncommercial 1.0.0**.
+The unmodified official license text is in `LICENSE`; `LICENSE_SCOPE.md` lists
+the covered source files and demo entry points. This is a noncommercial
+source-available software license. For commercial permission, contact TorusDx
+through the corresponding author.
+
+Model weights, acquisition images, manual coordinates and other data are outside
+this code-license grant. Their download availability does not extend this
+software license to them. Third-party dependencies, including Ultralytics, retain
+their own licenses; see `THIRD_PARTY_NOTICES.md`. This update makes no claim that
+the complete dependency stack has a single license or that all dependency
+licenses are compatible for every use or distribution.
+

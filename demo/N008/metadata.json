@@ -52,7 +52,7 @@
     "frames/frame_09.png": "547da1da8dfd5422f49615f63a965a4e20516a64220e85cb75182859358bca1d",
     "frames/frame_10.png": "b35e89f5e5c350697d1bb19be35915bba4400b964001bd9819c1bbed32282b6b"
   },
-  "image_provider": "Torus (Shanghai, China)",
+  "image_provider": "TorusDx (Shanghai, China)",
   "exposure_us": 100000,
   "gain_db": 20
 }

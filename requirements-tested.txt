@@ -1,0 +1,8 @@
+# Direct dependencies in the locally tested Windows CPU environment.
+# Python 3.13.5. This records an existing portable runtime, not a fresh-install lockfile.
+numpy==1.26.4
+scipy==1.16.1
+opencv-python==4.12.0.88
+matplotlib==3.10.5
+ultralytics==8.4.22
+torch==2.9.1
